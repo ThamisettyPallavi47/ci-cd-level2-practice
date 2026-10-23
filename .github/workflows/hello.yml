@@ -17,3 +17,6 @@ jobs:
 
       - name: Show files
         run: ls -la
+        
+      - name: Show Python Version
+        run: python --version
