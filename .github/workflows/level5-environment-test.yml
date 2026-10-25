@@ -1,0 +1,22 @@
+
+name: Level 5 Environment Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-environments:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Test development environment
+        run: |
+          docker run --rm \
+            -e APP_ENV=development \
+            tamisettypallavi32d9/ci-cd-level2:latest
+
+      - name: Test production environment
+        run: |
+          docker run --rm \
+            -e APP_ENV=production \
+            tamisettypallavi32d9/ci-cd-level2:latest
