@@ -49,4 +49,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ci-cd-level2:latest
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/ci-cd-level2:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/ci-cd-level2:v1.0.0
+          
