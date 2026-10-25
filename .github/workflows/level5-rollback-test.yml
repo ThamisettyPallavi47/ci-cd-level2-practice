@@ -1,0 +1,19 @@
+
+name: Level 5 Rollback Practice
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verify-previous-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pull version v1.0.0
+        run: docker pull tamisettypallavi32d9/ci-cd-level2:v1.0.0
+
+      - name: Run version v1.0.0
+        run: |
+          docker run --rm \
+            -e APP_ENV=production \
+            tamisettypallavi32d9/ci-cd-level2:v1.0.0
